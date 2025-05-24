@@ -5,8 +5,7 @@ const models = require("../models");
 
 controller.checkout = async (req, res) => {
   if (req.session.cart.quantity > 0) {
-    // let userId = req.user.id;
-    let userId = 1;
+    let userId = req.user.id;
     res.locals.addresses = await models.Address.findAll({
       where: { userId },
     });

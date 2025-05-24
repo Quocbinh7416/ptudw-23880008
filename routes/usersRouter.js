@@ -4,9 +4,9 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/usersController");
 const { body, validationResult } = require("express-validator");
-// const authController = require("../controllers/authController");
+const authController = require("../controllers/authController");
 
-// router.use(authController.isLoggedIn);
+router.use(authController.isLoggedIn);
 
 router.get("/checkout", controller.checkout);
 router.post(
@@ -37,6 +37,10 @@ router.post(
 
 router.get("/my-account", (req, res) => {
   res.render("my-account");
+});
+
+router.get("/wishlist", (req, res) => {
+  res.render("wishlist");
 });
 
 module.exports = router;
