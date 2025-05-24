@@ -1,5 +1,7 @@
 "use strict";
 
+require("dotenv").config();
+
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const { createStarList } = require("./controllers/handlebarsHelper");
@@ -9,8 +11,7 @@ const session = require("express-session");
 const redisStore = require("connect-redis").default;
 const { createClient } = require("redis");
 const redisClient = createClient({
-  // url: `rediss://red-d0ost2muk2gs73923gb0:4cnnQnNjfO8DFeCrlij23nA5sxNaYW16@singapore-keyvalue.render.com:6379`,
-  url: 'redis://red-d0ost2muk2gs73923gb0:6379'
+  url: process.env.REDIS_URL
 });
 redisClient.connect().catch(console.error);
 const app = express();
@@ -45,7 +46,7 @@ app.use(express.urlencoded({ extended: false }));
 // cau hinh su dung session
 app.use(
   session({
-    secret: 'S3cret',
+    secret: process.env.REDIS_URL,
     store: new redisStore({ client: redisClient }),
     resave: false,
     saveUninitialized: false,
