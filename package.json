@@ -1,0 +1,29 @@
+{
+  "name": "ptudw-23880008",
+  "version": "1.0.0",
+  "description": "phat-trien-ung-dung-web",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quocbinh7416/ptudw-23880008.git"
+  },
+  "author": "binh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quocbinh7416/ptudw-23880008/issues"
+  },
+  "homepage": "https://github.com/Quocbinh7416/ptudw-23880008#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.27.0"
+  }
+}
